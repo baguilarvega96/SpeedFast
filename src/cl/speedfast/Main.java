@@ -47,6 +47,13 @@ public class Main {
                 + pedidoExpress.calcularTiempoEntrega() + " minutos");
 
 
+        System.out.println("\n=== RESERVA DE PEDIDOS ===");
+
+        pedidoComida.reservar();
+        pedidoEncomienda.reservar();
+        pedidoExpress.reservar();
+
+
         System.out.println("\n=== DESPACHO ===");
 
         pedidoComida.despachar();

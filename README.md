@@ -37,3 +37,19 @@ Durante esta semana se amplió el sistema SpeedFast incorporando abstracción y 
 - Cálculo personalizado para `PedidoComida`.
 - Cálculo personalizado para `PedidoEncomienda`.
 - Cálculo personalizado para `PedidoExpress`.
+- ## Semana 3 - Interfaces y gestión integral de pedidos
+
+Durante esta semana se completó el sistema SpeedFast integrando abstracción, polimorfismo e interfaces.
+
+### Funcionalidades implementadas
+
+- Interfaces `Despachable`, `Cancelable` y `Rastreable`.
+- Asignación automática de repartidores.
+- Asignación manual mediante sobrecarga.
+- Cálculo de tiempos de entrega según tipo de pedido.
+- Reserva de pedidos.
+- Despacho de pedidos.
+- Cancelación de pedidos.
+- Historial de operaciones mediante `ArrayList`.
+- Uso de polimorfismo y sobrescritura.
+- Simulación integral desde la clase `Main`.

@@ -18,6 +18,7 @@ public abstract class Pedido implements Despachable, Cancelable, Rastreable {
 
     private boolean despachado = false;
     private boolean cancelado = false;
+    private boolean reservado = false;
 
     private List<String> historial = new ArrayList<>();
 
@@ -67,6 +68,12 @@ public abstract class Pedido implements Despachable, Cancelable, Rastreable {
 
     protected void registrarEvento(String evento) {
         historial.add(evento);
+    }
+
+    public void reservar() {
+        reservado = true;
+        registrarEvento("Pedido reservado.");
+        System.out.println("Pedido reservado correctamente.");
     }
 
     @Override
