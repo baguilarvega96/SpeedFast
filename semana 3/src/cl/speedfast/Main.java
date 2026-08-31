@@ -1,5 +1,6 @@
 package cl.speedfast;
 
+// Clase principal encargada de simular las funcionalidades del sistema SpeedFast.
 public class Main {
 
     public static void main(String[] args) {

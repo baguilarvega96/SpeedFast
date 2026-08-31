@@ -7,6 +7,8 @@ import cl.speedfast.interfaces.Rastreable;
 import java.util.ArrayList;
 import java.util.List;
 
+// Clase abstracta base que contiene los atributos y comportamientos
+// comunes de todos los tipos de pedidos de SpeedFast.
 public abstract class Pedido implements Despachable, Cancelable, Rastreable {
 
     private String idPedido;
@@ -70,12 +72,14 @@ public abstract class Pedido implements Despachable, Cancelable, Rastreable {
         historial.add(evento);
     }
 
+    // Registra la reserva del pedido en el historial.
     public void reservar() {
         reservado = true;
         registrarEvento("Pedido reservado.");
         System.out.println("Pedido reservado correctamente.");
     }
 
+    // Despacha el pedido siempre que no haya sido cancelado.
     @Override
     public void despachar() {
         if (cancelado) {
@@ -88,6 +92,7 @@ public abstract class Pedido implements Despachable, Cancelable, Rastreable {
         System.out.println("Pedido despachado correctamente.");
     }
 
+    // Cancela el pedido siempre que todavía no haya sido despachado.
     @Override
     public void cancelar() {
         if (despachado) {
