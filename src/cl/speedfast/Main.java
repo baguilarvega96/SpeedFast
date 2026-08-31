@@ -5,28 +5,31 @@ public class Main {
     public static void main(String[] args) {
 
         Pedido pedidoComida =
-                new PedidoComida("001", "Av. Italia 456");
+                new PedidoComida("001", "Av. Italia 456", 4);
 
         Pedido pedidoEncomienda =
-                new PedidoEncomienda("002", "Av. Independencia 123");
+                new PedidoEncomienda("002", "Av. Independencia 123", 6);
 
         Pedido pedidoExpress =
-                new PedidoExpress("003", "Av. Apoquindo 1500");
+                new PedidoExpress("003", "Av. Apoquindo 1500", 7);
 
 
-        pedidoComida.asignarRepartidor();
-        pedidoComida.asignarRepartidor("Juan Pérez");
-
-        System.out.println();
-
-
-        pedidoEncomienda.asignarRepartidor();
-        pedidoEncomienda.asignarRepartidor("Camila Soto");
+        pedidoComida.mostrarResumen();
+        System.out.println("Tiempo estimado de entrega: "
+                + pedidoComida.calcularTiempoEntrega() + " minutos");
 
         System.out.println();
 
 
-        pedidoExpress.asignarRepartidor();
-        pedidoExpress.asignarRepartidor("Luis Díaz");
+        pedidoEncomienda.mostrarResumen();
+        System.out.println("Tiempo estimado de entrega: "
+                + pedidoEncomienda.calcularTiempoEntrega() + " minutos");
+
+        System.out.println();
+
+
+        pedidoExpress.mostrarResumen();
+        System.out.println("Tiempo estimado de entrega: "
+                + pedidoExpress.calcularTiempoEntrega() + " minutos");
     }
 }

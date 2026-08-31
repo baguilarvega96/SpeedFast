@@ -2,8 +2,8 @@ package cl.speedfast;
 
 public class PedidoExpress extends Pedido {
 
-    public PedidoExpress(String idPedido, String direccionEntrega) {
-        super(idPedido, direccionEntrega, "Express");
+    public PedidoExpress(String idPedido, String direccionEntrega, double distanciaKm) {
+        super(idPedido, direccionEntrega, "Express", distanciaKm);
     }
 
     @Override
@@ -17,5 +17,14 @@ public class PedidoExpress extends Pedido {
     public void asignarRepartidor(String nombreRepartidor) {
         System.out.println("→ Verificando disponibilidad inmediata... OK");
         System.out.println("→ Pedido asignado a " + nombreRepartidor);
+    }
+
+    @Override
+    public int calcularTiempoEntrega() {
+        if (getDistanciaKm() > 5) {
+            return 15;
+        }
+
+        return 10;
     }
 }

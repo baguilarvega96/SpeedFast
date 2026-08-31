@@ -2,8 +2,8 @@ package cl.speedfast;
 
 public class PedidoComida extends Pedido {
 
-    public PedidoComida(String idPedido, String direccionEntrega) {
-        super(idPedido, direccionEntrega, "Comida");
+    public PedidoComida(String idPedido, String direccionEntrega, double distanciaKm) {
+        super(idPedido, direccionEntrega, "Comida", distanciaKm);
     }
 
     @Override
@@ -17,5 +17,10 @@ public class PedidoComida extends Pedido {
     public void asignarRepartidor(String nombreRepartidor) {
         System.out.println("→ Verificando mochila térmica... OK");
         System.out.println("→ Pedido asignado a " + nombreRepartidor);
+    }
+
+    @Override
+    public int calcularTiempoEntrega() {
+        return (int) (15 + (2 * getDistanciaKm()));
     }
 }
